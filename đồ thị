@@ -1,0 +1,22 @@
+#include <iostream>
+#include "matplotlibcpp.h"
+
+namespace plt = matplotlibcpp;
+
+int main() {
+    // Dữ liệu giả định
+    std::vector<int> gia = {10, 20, 30, 40, 50};
+    std::vector<int> do_co_dan_thuoc_la = {5, 7, 8, 10, 12};
+    std::vector<int> do_co_dan_thuoc_chua_benh = {8, 10, 12, 15, 18};
+
+    // Vẽ đồ thị
+    plt::plot(gia, do_co_dan_thuoc_la, "o-", "Thuốc lá");
+    plt::plot(gia, do_co_dan_thuoc_chua_benh, "o-", "Thuốc chữa bệnh");
+    plt::xlabel("Giá (đơn vị tiền)");
+    plt::ylabel("Độ co dãn của cầu");
+    plt::title("So sánh độ co dãn của cầu theo giá của thuốc lá và thuốc chữa bệnh");
+    plt::legend();
+    plt::show();
+
+    return 0;
+}
